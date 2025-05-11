@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stage 3.3</title>
+    <link rel="stylesheet" href="./css/level-3.3.css" />
+    <link rel="stylesheet" href="./css/onAnimation.css" />
+    <link rel="stylesheet" href="./css/level-1s.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body background="./icons/bluredbackground.png">
+    <span id="numberOfThisLevel">11</span>
+
+    <audio id="drag">
+      <source src="./audio/drag.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio id="drop">
+      <source src="./audio/drop.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio id="Audiowin">
+      <source src="./audio/win.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio id="BGM">
+      <source src="./audio/MU.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio id="wrong">
+      <source src="./audio/wrong.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="lev" id="lev1">
+      <div class="xx">
+        <div class="top-lev">
+          <div class="Lsec"><img src="./icons/logo.png" class="logo" /></div>
+          <div class="Msec">
+            <h2 class="lev-num" id="ttt">Stage <span id="lll">3</span></h2>
+          </div>
+          <div class="Rsec">
+            <p class="timer" id="timer">10:00</p>
+            <button class="eB" onclick="openQuestion()">
+              <img
+                src="./icons/question1.png"
+                class="top-lev-ic"
+                id="ques"
+                onmouseover="changeic('./icons/question2.png','ques')"
+                onmouseleave="changeic('./icons/question1.png','ques')"
+              />
+            </button>
+            <button class="eB" onclick="openHelp()">
+              <img
+                src="./icons/about1.png"
+                class="top-lev-ic"
+                id="about"
+                onmouseover="changeic('./icons/about2.png','about')"
+                onmouseleave="changeic('./icons/about1.png','about')"
+              />
+            </button>
+
+            <button class="eB" onclick="openStop()">
+              <img
+                src="./icons/pause1.png"
+                class="top-lev-ic"
+                id="stop"
+                onmouseover="changeic('./icons/pause2.png','stop')"
+                onmouseleave="changeic('./icons/pause1.png','stop')"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="bot-lev">
+          <button class="runB" id="run-button">Run</button>
+        </div>
+      </div>
+      <!-- print : -->
+      <!-- 121.50 -->
+      <div id="container">
+        <div id="menu">
+          <div class="block block-20">int x=3, z=x+y;</div>
+          <div class="block block-10">float y=6.0;</div>
+          <div class="block block-50">cout&lt;&lt;y*(z%x);</div>
+          <!--  0   -->
+          <div class="block block-40">cout&lt;&lt;x/2.0;</div>
+          <!--  1.5 -->
+          <div class="block block-30">cout&lt;&lt;z+z/x;</div>
+          <!--  12  -->
+          <div class="block block-40">cout&lt;&lt;z/y;</div>
+          <!--  1.5 -->
+        </div>
+        <div id="all-blocks">
+          <div class="block block-1 after">#include</div>
+          <div class="block block-2 before">&lt;iostream&gt;</div>
+          <div class="block block-3 after">main ( )</div>
+          <div class="block block-4 before">
+            <div>{</div>
+            <br />
+            <div>}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <div class="stop" id="stopclc">
+        <div class="buts">
+          <button
+            class="eB"
+            onmouseover="changeic('./icons/back2.png','back2')"
+            onmouseleave="changeic('./icons/back1.png','back2')"
+            onclick="bak('sec3-levels.html')"
+          >
+            <img src="./icons/back1.png" class="miniIc" id="back2" />
+          </button>
+          <button
+            class="eB"
+            onmouseover="changeic('./icons/play2.png','play')"
+            onmouseleave="changeic('./icons/play1.png','play')"
+            onclick="continueGame()"
+          >
+            <img src="./icons/play1.png" class="miniIc" id="play" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay2" id="overlay2">
+      <div class="help" id="help">
+        <div class="top-help">
+          <h2 class="tit-help">Help</h2>
+          <div
+            onclick="closeHelp()"
+            onmouseover="changeic('./icons/close2.png','clos')"
+            onmouseleave="changeic('./icons/close1.png','clos')"
+            class="clos-help-but"
+          >
+            <img src="./icons/close1.png" class="close-ic" id="clos" />
+          </div>
+        </div>
+        <div class="test">
+          <div class="discribtion" style="color: white">
+            <h3>The Order of Mathmetical Operations:</h3>
+            <ol style="padding: 30px">
+              <li>Parentheses ()</li>
+              <li>Multiply *, Divide / and Mod % from left to right</li>
+              <li>Add + and Subtract - from left to right</li>
+            </ol>
+            <hr />
+            Remember: You cannot use variables before declaring them!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay3" id="overlay3">
+      <div class="win" id="win">
+        <div class="top-win">
+          <h3 class="tit">You win</h3>
+        </div>
+        <div class="stars">
+          <div class="estar"><img src="./icons/star1.png" class="star" /></div>
+          <div class="mstar"><img src="./icons/star1.png" class="star" /></div>
+          <div class="estar"><img src="./icons/star1.png" class="star" /></div>
+        </div>
+        <div class="time" id="finalTime">her is timer</div>
+        <div class="buts">
+          <button
+            class="eB"
+            onmouseover="changeic('./icons/back2.png','back')"
+            onmouseleave="changeic('./icons/back1.png','back')"
+            onclick="bak('sec3-levels.html')"
+          >
+            <img src="./icons/back1.png" class="miniIc" id="back" />
+          </button>
+          <button class="nextB" onclick="win('level-3.4')">Next</button>
+          <button
+            class="eB"
+            onmouseover="changeic('./icons/restart2.png','restart')"
+            onmouseleave="changeic('./icons/restart1.png','restart')"
+            onclick="restartGame()"
+          >
+            <img src="./icons/restart1.png" class="miniIc" id="restart" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="./js/level-3.3.js"></script>
+    <script src="./js/level-1s.js"></script>
+  </body>
+</html>

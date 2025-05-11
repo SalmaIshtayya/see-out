@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Ubuntu_Sans_Mono';
+    src: url('./../Fonts/Ubuntu_Sans_Mono/UbuntuSansMono-Regular.ttf');
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu Sans Mono", monospace;
+}
+
+#container {
+    user-select: none;
+    height: 500px;
+    width: 800px;
+    position: absolute;
+    transform: translate(-50%);
+    top: 90px;
+    left: 50%;
+    overflow: hidden;
+    display: flex;
+    background-image: url("./../icons/levBackground.png");
+    background-size: cover;
+    /*Ensuretheimagecoverstheentirediv*/background-position: center;
+    /*Centertheimage*/background-repeat: no-repeat;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+}
+.bot-lev {
+    transform: translate(0%, 8%);
+    -webkit-transform: translate(0%, 8%);
+    -moz-transform: translate(0%, 8%);
+    -ms-transform: translate(0%, 8%);
+    -o-transform: translate(0%, 8%);
+}
+#menu {
+    width: 25%;
+    height: 100%;
+    background-color: #7874ad3b;
+}
+
+#all-blocks {
+    width: 75%;
+    height: 100%;
+    right: 0;
+}
+
+.block {
+    font-family: Ubuntu_Sans_Mono;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7874AD;
+    height: 11.7em;
+    width: 8.62em;
+    border-radius: 5px;
+    position: absolute;
+    cursor: grab;
+    z-index: 1;
+}
+
+#all-blocks > .block {
+    animation-name: dragged, beat;
+    animation-duration: 0.5s, 1s;
+    animation-timing-function: ease, ease;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards, forwards;
+    animation-play-state: paused, paused;
+}
+
+@keyframes dragged {
+    to {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes beat {
+    50% {
+        transform: scale(0.9);
+    }
+}
+
+.validation {
+    border: 5px solid #574e82;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, 1em);
+    row-gap: 5px;
+    justify-items: center;
+    align-items: center;
+}
+
+.block-1 {
+    left: 287px;
+    top: 121px;
+}
+
+.block-2 {
+    left: 535px;
+    top: 121px;
+}
+
+.name{
+    left: 410px;
+    top: 201px;
+    height: 3em;
+    margin: 20px 0 0 13px;
+    position: static;
+}
+
+hr {
+    height:1px;
+    border-width:0;
+}
+
+#menu > .name:hover,
+#all-blocks > .name:hover {
+    cursor: grab;
+    border: 3px solid #574e82;
+}

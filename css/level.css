@@ -1,0 +1,49 @@
+.main-container{
+    background-color:rgb(45, 45, 45);
+height: 600px;
+width: 1200px;
+}
+.main-container-header{
+    height: 60px;
+    width: inherit;
+    background-color: rgb(43, 42, 42);
+    display: flex;
+    justify-content: center;
+}
+.m-h-sub-c{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.counter-container{
+    align-items: center;
+    height: 40px;
+    width: 100px;
+    border: 2px solid #ede8e8 ;
+    box-shadow: 1px 1px 5px rgba(223, 223, 223, 0.164);
+}
+.m-h-btn{
+    background-color: #ede8e800;
+    border: none;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+.pause{
+    height: 50px;
+    width: 50px;
+}
+.count{
+    margin:  10px;
+    text-align: center;
+    font-size: 18px;
+    color: aliceblue;
+}
+
+.stop-container{
+    background-color: aquamarine;
+    height: 300px;
+    width: 500px;
+}

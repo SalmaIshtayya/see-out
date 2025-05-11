@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'Ubuntu_Sans_Mono';
+    src: url('./../Fonts/Ubuntu_Sans_Mono/UbuntuSansMono-Regular.ttf');
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+} 
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu Sans Mono", monospace;
+}
+
+#container {
+    user-select: none;
+    height: 500px;
+    width: 800px;
+    position: absolute;
+    transform: translate(-50%);
+    top: 90px;
+    left: 50%;
+    overflow: hidden;
+    display: flex;
+    background-image: url("./../icons/levBackground.png");
+    background-size: cover;
+    /*Ensuretheimagecoverstheentirediv*/background-position: center;
+    /*Centertheimage*/background-repeat: no-repeat;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+}
+.bot-lev {
+    transform: translate(-1.1%, 8%);
+}
+#menu {
+    width: 25%;
+    height: 100%;
+    background-color: #7874ad3b;
+}
+
+#all-blocks {
+    width: 75%;
+    height: 100%;
+    right: 0;
+}
+
+.block {
+    font-family: Ubuntu_Sans_Mono;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7874AD;
+    height: 3.7em;
+    width: 8.62em;
+    border-radius: 5px;
+    position: absolute;
+    cursor: grab;
+    z-index: 1;
+}
+
+#all-blocks > .block {
+    animation-name: dragged, beat;
+    animation-duration: 0.5s, 1s;
+    animation-timing-function: ease, ease;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards, forwards;
+    animation-play-state: paused, paused;
+}
+
+@keyframes dragged {
+    to {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes beat {
+    50% {
+        transform: scale(0.9);
+    }
+}
+
+.block::before {
+    content: "";
+    left: -20px;
+    top: 24%;
+    background-color: #7874AD;
+    border-color: #7874AD transparent #7874AD #7874AD;
+    z-index: -1;
+}
+
+.block-4::before {
+    left: -25px;
+    top : var(--before-top);
+}
+
+.before::before {
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    border-style: solid;
+}
+
+.after {
+    background-color: transparent;
+    background-image: url('./../icons/after.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 8.62em 3.7em;
+}
+
+.block-1 {
+    left: 294px;
+    top: 84px;
+}
+
+.block-2 {
+    left: 467px;
+    top: 84px;
+}
+
+.block-3 {
+    left: 294px;
+    top: 270.625px;
+}
+
+.block-4 {
+    left: 467px;
+    top: 270.625px;
+    border: 5px solid transparent;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, 1em);
+}
+
+.block-10,
+.block-20,
+.block-40,
+.block-50,
+.block-60,
+.block-70 {
+    height: 3em;
+    margin: 20px 0 0 13px;
+    position: static;
+}
+
+#menu > .block-10:hover,
+#menu > .block-20:hover,
+#menu > .block-40:hover,
+#menu > .block-50:hover,
+#menu > .block-60:hover,
+#menu > .block-70:hover,
+#all-blocks > .block-10:hover,
+#all-blocks > .block-20:hover,
+#all-blocks > .block-40:hover,
+#all-blocks > .block-50:hover,
+#all-blocks > .block-60:hover,
+#all-blocks > .block-70:hover {
+    cursor: grab;
+    border: 3px solid #574e82;
+}

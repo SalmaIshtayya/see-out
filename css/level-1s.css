@@ -1,0 +1,506 @@
+@font-face {
+  font-family: "Ubuntu_Sans_Mono";
+  src: url("./../Fonts/Ubuntu_Sans_Mono/UbuntuSansMono-Regular.ttf");
+}
+
+body {
+  font-family: Ubuntu_Sans_Mono;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #1a162b;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-color: #000000;
+}
+
+.main {
+  background-color: #00000098;
+  height: auto;
+  width: 600px;
+  top: 15%;
+  border: 1px solid #9f50751c;
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  animation-name: onbord;
+  animation-duration: 0.1s;
+  animation-delay: 1.3s;
+  animation-fill-mode: forwards;
+  display: block;
+}
+.back-btn {
+  height: 50px;
+  width: 50px;
+  background-color: #ffffff00;
+  border: none;
+  margin-top: 20px;
+  margin-right: 155px;
+  margin-left: 20px;
+}
+.back-icon {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+.top {
+  width: auto;
+  display: flex;
+  align-items: start;
+  margin-bottom: 9px;
+  margin-top: 4px;
+}
+.title {
+  font-weight: 800;
+  font-size: 30px;
+  color: #ffffff1d;
+  flex: 1;
+  text-align: center;
+  margin-right: 15px;
+  margin-bottom: 0px;
+  animation-name: ontit;
+  animation-duration: 0.3s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+.levs {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.leve {
+  height: 50px;
+  width: 200px;
+  background-color: #ffffff00;
+  border: 1px solid #a95dbe1e;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  cursor: pointer;
+  animation-name: levsanimation;
+  animation-duration: 0.3s;
+  animation-delay: 2.7s;
+  animation-fill-mode: forwards;
+}
+.levtit {
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffffff16;
+  text-align: center;
+  animation-name: ontit;
+  animation-duration: 0.1s;
+  animation-delay: 1.8s;
+  animation-fill-mode: forwards;
+}
+/********************************************************************* level 1*/
+.lev1 {
+  display: none;
+}
+.lev {
+  display: block;
+}
+.top-lev {
+  background-color: rgb(1, 1, 2);
+  height: 90px;
+  width: 800px;
+  margin-top: 5px;
+  margin-bottom: 490px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 9px !important;
+  align-items: center;
+  transform: translate(0%, -5%);
+}
+.xx {
+  height: 630px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+.bot-lev {
+  background-color: rgb(1, 1, 2);
+  height: 75px;
+  width: 800px;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Lsec,
+.Msec,
+.Rsec {
+  height: inherit;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Msec {
+  justify-content: center !important;
+}
+
+.Rsec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center !important;
+}
+
+.logo {
+  height: 43px;
+  width: 170px;
+}
+
+.lev-num {
+  color: #fff;
+}
+
+.top-lev-ic {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.timer {
+  height: auto;
+  width: auto;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.runB {
+  height: 50px;
+  width: 100px;
+  background-color: #655dc067;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  margin: 5px;
+}
+
+.runB:hover,
+.leve:hover {
+  background: linear-gradient(261.19deg, #81493f67, #163b6e8b);
+}
+
+/********************************************************   stop */
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.26);
+  z-index: 1000;
+}
+
+.stop {
+  height: 150px;
+  width: auto;
+  background-color: #00000098;
+  border: 1px solid #eff0d0;
+  border-radius: 18px;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  padding: 15px;
+  top: 50%;
+  left: 50%;
+  z-index: 1001;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.4s;
+  position: fixed;
+}
+
+.openStop {
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.audio-control {
+  height: 65px;
+  width: 375px;
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-ic {
+  height: 70px;
+  width: 70px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.rang {
+  margin-left: 30px;
+  width: 230px;
+  cursor: pointer;
+}
+
+.buts {
+  height: 100px;
+  width: 375px;
+  display: flex;
+  padding-left: 36px;
+  padding-right: 36px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.eB {
+  height: 60px;
+  width: 60px;
+  background-color: #00000000;
+  border: none;
+  cursor: pointer;
+}
+
+.miniIc {
+  height: inherit;
+  width: inherit;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/************************************************************help */
+.overlay2 {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.26);
+  z-index: 1000;
+}
+
+.help {
+  height: auto;
+  width: 450px;
+  background-color: #00000098;
+  border: 1px solid #eff0d0;
+  border-radius: 18px;
+  display: block;
+  top: 50%;
+  left: 50%;
+  z-index: 1001;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.4s;
+  position: fixed;
+}
+
+.top-help {
+  height: 50px;
+  width: inherit;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  border-bottom: 1px solid #ffffff80;
+}
+
+.tit-help {
+  justify-content: center;
+  height: auto;
+  width: 400px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.clos-help-but {
+  height: 50px;
+  width: 50px;
+  margin-right: 7px;
+}
+
+.close-ic {
+  height: inherit;
+  width: inherit;
+  cursor: pointer;
+}
+
+.test {
+  height: 500px;
+  width: 447px;
+  background-color: rgb(8 6 14 / 89%);
+  border-radius: 0 0 18px 18px;
+  padding: 2px 10px;
+  line-height: 1.8;
+  font-size: 19px;
+  text-align: justify;
+}
+/************************************************************win */
+.overlay3 {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.26);
+  z-index: 1000;
+}
+
+.win {
+  height: auto;
+  width: auto;
+  background-color: #000000cb;
+  border: 1px solid #eff0d0;
+  border-radius: 18px;
+  padding-top: 10px;
+  display: block;
+  top: 50%;
+  left: 50%;
+  z-index: 1001;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.4s;
+  position: fixed;
+}
+
+.top-win {
+  height: 70px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tit {
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.stars {
+  height: 130px;
+  width: 372px;
+  display: flex;
+  padding: 40px;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.estar {
+  height: inherit;
+  width: 120px;
+  display: flex;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.mstar {
+  height: inherit;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.star {
+  height: 80px;
+  width: 80px;
+}
+
+.time {
+  height: 60px;
+  width: auto;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buts {
+  height: 100px;
+  width: 375px;
+  display: flex;
+  padding-left: 36px;
+  padding-right: 36px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nextB {
+  height: 50px;
+  width: 100px;
+  background-color: #00000000;
+  border: 3px solid #fff;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nextB:hover {
+  border: none;
+  border: 3px solid #a196d2;
+  color: #d2c9f9;
+}
+
+.swal-icon--custom img {
+  height: 120px !important;
+  width: 280px !important;
+  border: 1px solid #d9f1f089;
+}
+
+.swal-modal {
+  background-color: #231f20;
+  border: 1px solid #f5f7fa85;
+  height: auto;
+  width: 500px;
+  margin-top: -500px;
+  display: block;
+  align-items: center;
+  left: 50%;
+}
+
+.swal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  padding: 5px;
+  padding-bottom: 18px !important;
+}
+
+.swal-text {
+  display: block;
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+  width: auto;
+  height: auto;
+  margin-bottom: 15px;
+}
+.swal-title {
+  color: #ffffff;
+  font-weight: 500;
+}
+.swal-button {
+  background-color: #a196d2a0;
+}
